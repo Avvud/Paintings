@@ -1,0 +1,49 @@
+.about-section {
+  font-family: 'Georgia', serif;
+  color: #3b2504;
+  background-color: #fffdf5;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(186, 134, 11, 0.1);
+}
+
+.subtitle {
+  color: #b8860b;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.section-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #5c3d00;
+  margin-bottom: 2rem;
+}
+
+.about-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.point-number {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #b8860b;
+  border: 2px solid #b8860b;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.point-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}

@@ -1,0 +1,20 @@
+.learn-section {
+  background: linear-gradient(to right, #fff9ec, #fdf2d5);
+  border-radius: 12px;
+  margin-top: 3rem;
+  box-shadow: 0 8px 24px rgba(186, 134, 11, 0.1);
+  padding: 3rem 2rem;
+}
+
+.learn-heading {
+  font-size: 2rem;
+  color: #5c3d00;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.learn-desc {
+  font-size: 1.1rem;
+  color: #4a3200;
+  margin-bottom: 1rem;
+}
