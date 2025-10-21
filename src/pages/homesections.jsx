@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { FaPalette, FaShippingFast, FaCertificate, FaHeart, FaUsers } from "react-icons/fa";
-import '../styles/HomeSection.css';
+import '../styles/homeSection.css';
 
 // ✅ STATS SECTION
 export function StatsSection({ stats, isVisible }) {
