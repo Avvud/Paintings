@@ -1,32 +1,31 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavBar.css';
 
 function NavBar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(prev => !prev);
+
   return (
     <>
-      {/* Header/NavBar */}
       <nav className="navbar">
         <h1 className="logo">Tanjore Treasure</h1>
-        <ul>
-          <li>
-            <NavLink to="/" end>Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/gallery">Gallery</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about">About</NavLink>
-          </li>
-          <li>
-            <NavLink to="/cart">Cart</NavLink>
-          </li>
+        <div className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul className={`nav-links ${menuOpen ? 'show' : ''}`}>
+          <li><NavLink to="/" end onClick={() => setMenuOpen(false)}>Home</NavLink></li>
+          <li><NavLink to="/gallery" onClick={() => setMenuOpen(false)}>Gallery</NavLink></li>
+          <li><NavLink to="/about" onClick={() => setMenuOpen(false)}>About</NavLink></li>
+          <li><NavLink to="/cart" onClick={() => setMenuOpen(false)}>Cart</NavLink></li>
         </ul>
       </nav>
-      {/* Spacer to prevent content from being hidden behind navbar */}
       <div style={{ height: '80px' }}></div>
     </>
   );
 }
 
 export default NavBar;
-

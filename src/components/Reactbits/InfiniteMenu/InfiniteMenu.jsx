@@ -497,6 +497,7 @@ class InfiniteGridMenu {
   #deltaTime = 0;
   #deltaFrames = 0;
   #frames = 0;
+  animationId = null;
   camera = {
     matrix: mat4.create(),
     near: 0.1,
@@ -551,7 +552,13 @@ class InfiniteGridMenu {
     this.#animate(this.#deltaTime);
     this.#render();
 
-    requestAnimationFrame((t) => this.run(t));
+    this.animationId = requestAnimationFrame((t) => this.run(t));
+  }
+  destroy() {
+    if (this.animationId) {
+      cancelAnimationFrame(this.animationId);
+      this.animationId = null;
+    }
   }
 
   #init(onInit) {
@@ -884,6 +891,10 @@ export default function InfiniteMenu({ items = [], navigate }) {
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      if (sketch) {
+      sketch.destroy();
+    }
+
     };
   }, [items]); // remove autoRotate from deps
 
@@ -934,5 +945,3 @@ export default function InfiniteMenu({ items = [], navigate }) {
     </div >
   );
 }
-
-

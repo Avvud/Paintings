@@ -1,0 +1,124 @@
+/* STATS SECTION */
+.stats-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #EFE3D6, #F9F7F3);
+}
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #7A2F2F;
+}
+.stat-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.3s ease;
+  background: #F9F7F3;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(47, 92, 76, 0.1);
+}
+.stat-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+.stat-icon {
+  color: #C5A253;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2E2E2E;
+}
+.stat-label {
+  font-size: 1rem;
+  color: #4F4032;
+}
+
+/* FEATURED COLLECTION */
+.featured-collection {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #F9F7F3, #EFE3D6);
+}
+.collection-card {
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(79, 64, 50, 0.1);
+}
+.collection-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card-info h3 {
+  color: #2E2E2E;
+}
+.card-info p {
+  color: #4F4032;
+}
+.price {
+  color: #C5A253;
+  font-weight: bold;
+}
+.add-to-cart {
+  background: linear-gradient(to right, #C5A253, #EFE3D6);
+  color: #1C1C1C;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #EFE3D6, #F9F7F3);
+}
+.testimonial-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.testimonial-card {
+  min-width: 100%;
+  background: #F9F7F3;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(47, 92, 76, 0.1);
+  border-radius: 20px;
+}
+.testimonial-text {
+  color: #2E2E2E;
+  font-style: italic;
+}
+.star {
+  color: #C5A253;
+}
+
+/* CALL TO ACTION */
+.cta-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #2E2E2E, #4F4032);
+  color: white;
+  text-align: center;
+}
+.cta-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.btn-primary.large {
+  background: linear-gradient(to right, #C5A253, #EFE3D6);
+  color: #1C1C1C;
+}
+.btn-secondary.large {
+  border: 2px solid #C5A253;
+  color: white;
+}
+.btn-secondary.large:hover {
+  background: #C5A253;
+  color: #1C1C1C;
+}

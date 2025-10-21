@@ -11,28 +11,28 @@
   left: 0;
   width: 100vw;
   z-index: 1000;
-  background: linear-gradient(90deg, #f5e1a4 80%, #fffaf0 100%);
+  background: linear-gradient(90deg, #EFE3D6 80%, #C5A253 100%);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.1rem 3vw;
-  box-shadow: 0 4px 18px rgba(186, 134, 11, 0.1);
-  border-bottom: 2px solid #e6c674;
+  box-shadow: 0 4px 18px rgba(47, 92, 76, 0.1);
+  border-bottom: 2px solid #4F4032;
 }
 
 .logo {
   font-size: 2.2rem;
   font-weight: bold;
-  color: #b8860b;
+  color: #7A2F2F;
   font-family: 'Georgia', 'Times New Roman', serif;
   letter-spacing: 0.06em;
-  text-shadow: 0 2px 8px #fff0c1;
+  text-shadow: 0 1px 4px #F9F7F3;
   user-select: none;
-    padding: 0.3rem 1.2rem 0.3rem 0.5rem; /* Elegant horizontal padding */
-  margin-right: 2.5rem;                 /* Space between logo and nav links */
-  border-radius: 12px 0 12px 0;         /* Classic corner effect */
-  background: rgba(245, 225, 164, 0.25);/* Subtle background for logo */
-  box-shadow: 0 2px 8px #e6c67422;
+  padding: 0.3rem 1.2rem 0.3rem 0.5rem;
+  margin-right: 2.5rem;
+  border-radius: 12px 0 12px 0;
+  background: rgba(239, 227, 214, 0.4);
+  box-shadow: 0 2px 8px rgba(79, 64, 50, 0.2);
 }
 
 .navbar ul {
@@ -45,7 +45,7 @@
 
 .navbar a {
   font-weight: 600;
-  color: #7a5200;
+  color: #2E2E2E;
   border-radius: 8px;
   padding: 0.4rem 1.1rem;
   font-family: 'Georgia', serif;
@@ -55,9 +55,9 @@
 
 .navbar a:hover,
 .navbar a.active {
-  background-color: #fff0c1;
-  color: #a76f00;
-  box-shadow: 0 2px 8px #e6c67444;
+  background-color: #C5A253;
+  color: #F9F7F3;
+  box-shadow: 0 2px 8px rgba(79, 64, 50, 0.3);
 }
 
 /* Responsive */
