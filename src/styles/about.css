@@ -1,49 +1,881 @@
-.about-section {
-  font-family: 'Georgia', serif;
-  color: #3b2504;
-  background-color: #fffdf5;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(186, 134, 11, 0.1);
+/* ==========================================
+   ABOUT PAGE STYLES - TANJORE TREASURE
+   ========================================== */
+
+.about-page {
+  background: linear-gradient(135deg, #F9F7F3 0%, #EFE3D6 100%);
+}
+
+.about-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ==========================================
+   HEADER SECTION
+   ========================================== */
+
+.about-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 1rem;
+  background: linear-gradient(120deg, rgba(197, 162, 83, 0.1), rgba(239, 227, 214, 0.3));
+  border-radius: 20px;
+  border: 2px solid #e6c674;
+}
+
+.about-header h1 {
+  font-size: 3rem;
+  color: #7A2F2F;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 6px rgba(197, 162, 83, 0.3), 0 1px 0 #fff;
+}
+
+.header-divider {
+  width: 150px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #C5A253, transparent);
+  margin: 1rem auto;
+  border-radius: 2px;
 }
 
 .subtitle {
-  color: #b8860b;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #4F4032;
+  font-style: italic;
+  letter-spacing: 0.05em;
 }
 
-.section-heading {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #5c3d00;
+/* ==========================================
+   SECTION TITLES
+   ========================================== */
+
+.section-title {
+  font-size: 2.2rem;
+  color: #7A2F2F;
   margin-bottom: 2rem;
-}
-
-.about-point {
+  padding-bottom: 0.8rem;
+  text-align: center;
+  border-bottom: 3px solid #e6c674;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
 }
 
-.point-number {
-  font-size: 1.25rem;
+.section-title .icon {
+  font-size: 2.5rem;
+}
+
+/* ==========================================
+   PROFILE SECTION
+   ========================================== */
+
+.profile-section {
+  margin-bottom: 4rem;
+}
+
+.profile-card {
+  background: #F9F7F3;
+  border: 2px solid #e6c674;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(197, 162, 83, 0.15);
+}
+
+.profile-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 1rem;
+}
+
+.profile-table tr {
+  transition: background 0.2s;
+}
+
+.profile-table tr:hover {
+  background: rgba(197, 162, 83, 0.05);
+}
+
+.profile-table td {
+  padding: 1rem;
+  vertical-align: top;
+}
+
+.profile-table .label {
   font-weight: bold;
-  color: #b8860b;
-  border: 2px solid #b8860b;
+  color: #7A2F2F;
+  width: 200px;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+}
+
+.profile-table .value {
+  color: #2E2E2E;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.profile-table .value a {
+  color: #C5A253;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.profile-table .value a:hover {
+  color: #A98A40;
+}
+
+/* ==========================================
+   ACHIEVEMENTS SECTION
+   ========================================== */
+
+.achievements-section {
+  margin-bottom: 4rem;
+}
+
+.achievement-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.achievement-card {
+  background: linear-gradient(135deg, #F9F7F3, #EFE3D6);
+  border: 2px solid #C5A253;
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(197, 162, 83, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-card::before {
+  content: '🏆';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 8rem;
+  opacity: 0.1;
+  transform: rotate(25deg);
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 12px 36px rgba(197, 162, 83, 0.3);
+}
+
+.achievement-number {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #C5A253;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.achievement-card h3 {
+  color: #7A2F2F;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.achievement-card p {
+  color: #4F4032;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.achievement-card .date {
+  color: #C5A253;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.achievement-card .note {
+  font-style: italic;
+  color: #5c3d00;
+  font-size: 1rem;
+}
+
+/* ==========================================
+   EXHIBITIONS LIST
+   ========================================== */
+
+.exhibitions-section {
+  margin-bottom: 4rem;
+}
+
+.exhibition-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.exhibition-item {
+  display: flex;
+  gap: 1.5rem;
+  background: #F9F7F3;
+  border-left: 4px solid #C5A253;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(197, 162, 83, 0.1);
+  transition: all 0.3s;
+}
+
+.exhibition-item:hover {
+  border-left-width: 8px;
+  box-shadow: 0 6px 20px rgba(197, 162, 83, 0.2);
+  transform: translateX(5px);
+}
+
+.exhibition-marker {
+  min-width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #C5A253, #A98A40);
+  color: white;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(197, 162, 83, 0.3);
 }
 
-.point-title {
-  margin: 0;
-  font-size: 1.1rem;
+.exhibition-details h4 {
+  color: #7A2F2F;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.exhibition-details .location {
+  color: #4F4032;
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+
+.exhibition-details .date {
+  color: #C5A253;
   font-weight: bold;
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   TRAINING & INFO CARDS
+   ========================================== */
+
+.training-section {
+  margin-bottom: 4rem;
+}
+
+.info-card {
+  background: linear-gradient(120deg, #F9F7F3, #EFE3D6);
+  border: 2px solid #e6c674;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(197, 162, 83, 0.15);
+}
+
+.info-card p {
+  color: #2E2E2E;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-card .years {
+  color: #C5A253;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+/* ==========================================
+   CONDUCTED EXHIBITIONS
+   ========================================== */
+
+.conducted-exhibitions {
+  margin-bottom: 4rem;
+}
+
+.exhibition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.exhibition-card {
+  background: #F9F7F3;
+  border: 2px solid #e6c674;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(197, 162, 83, 0.1);
+  transition: all 0.3s;
+}
+
+.exhibition-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(197, 162, 83, 0.2);
+  border-color: #C5A253;
+}
+
+.exhibition-card h4 {
+  color: #7A2F2F;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.exhibition-card p {
+  color: #4F4032;
+  font-size: 1rem;
+}
+
+/* ==========================================
+   MEDIA SECTION
+   ========================================== */
+
+.media-section {
+  margin-bottom: 4rem;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.media-card {
+  background: linear-gradient(135deg, #F9F7F3, #EFE3D6);
+  border: 2px solid #C5A253;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(197, 162, 83, 0.15);
+}
+
+.media-card h3 {
+  color: #7A2F2F;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid #e6c674;
+}
+
+.media-list {
+  list-style: none;
+  padding: 0;
+}
+
+.media-list li {
+  color: #2E2E2E;
+  font-size: 1.05rem;
+  padding: 0.6rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  border-bottom: 1px solid rgba(197, 162, 83, 0.2);
+}
+
+.media-list li:last-child {
+  border-bottom: none;
+}
+
+.media-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #C5A253;
+  font-weight: bold;
+}
+
+.media-list li strong {
+  color: #7A2F2F;
+}
+
+/* ==========================================
+   AWARDS SECTION
+   ========================================== */
+
+.awards-section {
+  margin-bottom: 4rem;
+}
+
+.awards-category {
+  margin-bottom: 3rem;
+}
+
+.awards-category h3 {
+  color: #7A2F2F;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e6c674;
+}
+
+.award-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.award-tag {
+  background: linear-gradient(135deg, #C5A253, #A98A40);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(197, 162, 83, 0.3);
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.award-tag:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(197, 162, 83, 0.4);
+}
+
+.award-list-detailed {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.award-item-detailed {
+  background: #F9F7F3;
+  border: 2px solid #e6c674;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(197, 162, 83, 0.1);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.award-item-detailed::before {
+  content: '🏅';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 4rem;
+  opacity: 0.1;
+}
+
+.award-item-detailed:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(197, 162, 83, 0.2);
+  border-color: #C5A253;
+}
+
+.award-item-detailed h4 {
+  color: #7A2F2F;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.award-item-detailed p {
+  color: #4F4032;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   SALES SECTION
+   ========================================== */
+
+.sales-section {
+  margin-bottom: 2rem;
+}
+
+.sales-card {
+  background: linear-gradient(120deg, #F9F7F3, #EFE3D6);
+  border: 3px solid #C5A253;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 24px rgba(197, 162, 83, 0.2);
+}
+
+.sales-intro {
+  text-align: center;
+  color: #2E2E2E;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.sales-locations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.sales-location {
+  background: white;
+  border: 2px solid #e6c674;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(197, 162, 83, 0.1);
+}
+
+.sales-location h4 {
+  color: #7A2F2F;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid #e6c674;
+}
+
+.sales-location p {
+  color: #4F4032;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.8;
+}
+
+.contact-detail {
+  color: #C5A253 !important;
+  font-weight: bold;
+  font-size: 1.1rem !important;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 900px) {
+  .about-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .profile-table .label {
+    width: 150px;
+    font-size: 1rem;
+  }
+
+  .profile-table .value {
+    font-size: 1rem;
+  }
+
+  .achievement-number {
+    font-size: 3rem;
+  }
+
+  .achievement-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .media-grid,
+  .achievement-cards,
+  .sales-locations {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-container {
+    padding: 1rem;
+  }
+
+  .about-header {
+    padding: 1.5rem 0.8rem;
+  }
+
+  .about-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-table {
+    border-spacing: 0;
+  }
+
+  .profile-table tr {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid #e6c674;
+    padding: 1rem 0;
+  }
+
+  .profile-table .label {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .profile-table .value {
+    padding: 0.5rem;
+  }
+
+  .achievement-card {
+    padding: 1.5rem;
+  }
+
+  .exhibition-item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .award-tags {
+    flex-direction: column;
+  }
+
+  .award-tag {
+    text-align: center;
+  }
+
+  .exhibition-grid,
+  .award-list-detailed {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-section,
+.achievements-section,
+.exhibitions-section,
+.media-section,
+.awards-section {
+  animation: fadeInUp 0.6s ease-out;
+}
+/* ==========================================
+   ARTIST PHOTO - STATIC LEFT SIDE LAYOUT
+   ========================================== */
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.artist-photo-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  /* Removed sticky positioning - now static */
+}
+
+.photo-frame-square {
+  position: relative;
+  width: 280px;
+  height: 320px;
+  background: linear-gradient(135deg, #C5A253, #A98A40);
+  padding: 12px;
+  border-radius: 20px;
+  box-shadow: 
+    0 8px 24px rgba(197, 162, 83, 0.3),
+    inset 0 2px 8px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.photo-frame-square:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(197, 162, 83, 0.4);
+}
+
+.photo-frame-square::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: 2px solid #e6c674;
+  border-radius: 22px;
+  opacity: 0.6;
+}
+
+.photo-frame-square::after {
+  content: '🎨';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  background: rgba(249, 247, 243, 0.9);
+  padding: 0.3rem 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.artist-photo-square {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 3px solid #F9F7F3;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.artist-title {
+  text-align: center;
+  background: linear-gradient(120deg, #F9F7F3, #EFE3D6);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #e6c674;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(197, 162, 83, 0.15);
+}
+
+.artist-title h3 {
+  color: #7A2F2F;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(197, 162, 83, 0.3);
+}
+
+.artist-title p {
+  color: #C5A253;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+/* Responsive for Static Left Layout */
+@media (max-width: 1024px) {
+  .profile-layout {
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+  }
+
+  .photo-frame-square {
+    width: 230px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .artist-photo-sidebar {
+    margin-bottom: 2rem;
+  }
+
+  .photo-frame-square {
+    width: 260px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .photo-frame-square {
+    width: 200px;
+    height: 240px;
+  }
+
+  .artist-title h3 {
+    font-size: 1.4rem;
+  }
+
+  .artist-title p {
+    font-size: 1rem;
+  }
+}
+
+/* ==========================================
+   CRITICAL MOBILE FIXES FOR ABOUT PAGE
+   ========================================== */
+
+@media (max-width: 480px) {
+  /* Fix profile layout on very small screens */
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-frame-square {
+    width: 220px;
+    height: 260px;
+    margin: 0 auto;
+  }
+
+  /* Fix table overflow */
+  .profile-table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+  }
+
+  /* Better spacing for awards */
+  .award-tag {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Fix media cards stacking */
+  .media-card {
+    padding: 1.5rem;
+  }
+
+  .media-list li {
+    font-size: 0.95rem;
+    padding: 0.5rem 0 0.5rem 1.2rem;
+  }
+
+  /* Sales section mobile fix */
+  .sales-locations {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .sales-location {
+    padding: 1.5rem;
+  }
+}
+
+/* Fix for very small phones (< 360px) */
+@media (max-width: 360px) {
+  .about-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .section-title .icon {
+    font-size: 1.8rem;
+  }
+
+  .achievement-number {
+    font-size: 2.5rem;
+  }
+
+  .photo-frame-square {
+    width: 180px;
+    height: 220px;
+  }
 }

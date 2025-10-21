@@ -1,3 +1,8 @@
+/* ==========================================
+   NAVBAR - ENHANCED INTERACTIVE VERSION
+   (Keeping Your Exact Colors & Design)
+   ========================================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +23,17 @@
   padding: 1.1rem 3vw;
   box-shadow: 0 4px 18px rgba(47, 92, 76, 0.1);
   border-bottom: 2px solid #4F4032;
+  transition: box-shadow 0.3s ease, padding 0.3s ease;
 }
+
+/* Enhanced shadow on scroll (optional - add class via JS) */
+.navbar.scrolled {
+  box-shadow: 0 6px 24px rgba(47, 92, 76, 0.15);
+}
+
+/* ==========================================
+   LOGO - ENHANCED WITH SUBTLE ANIMATION
+   ========================================== */
 
 .logo {
   font-size: 2.2rem;
@@ -33,7 +48,40 @@
   border-radius: 12px 0 12px 0;
   background: rgba(239, 227, 214, 0.4);
   box-shadow: 0 2px 8px rgba(79, 64, 50, 0.2);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
+
+.logo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(197, 162, 83, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.logo:hover::before {
+  left: 100%;
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 64, 50, 0.3);
+  color: #5c1f1f;
+}
+
+.logo:active {
+  transform: translateY(0);
+}
+
+/* ==========================================
+   NAV LINKS - DESKTOP
+   ========================================== */
 
 .navbar ul {
   list-style: none;
@@ -41,6 +89,7 @@
   gap: 2.2rem;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .navbar a {
@@ -50,7 +99,29 @@
   padding: 0.4rem 1.1rem;
   font-family: 'Georgia', serif;
   font-size: 1.08rem;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+
+/* Slide-in underline effect */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #4F4032;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  width: 100%;
 }
 
 .navbar a:hover,
@@ -58,21 +129,375 @@
   background-color: #C5A253;
   color: #F9F7F3;
   box-shadow: 0 2px 8px rgba(79, 64, 50, 0.3);
+  transform: translateY(-2px);
 }
 
-/* Responsive */
-@media (max-width: 700px) {
+.navbar a:active {
+  transform: translateY(0);
+}
+
+/* Ripple effect on click */
+.navbar a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(79, 64, 50, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+}
+
+.navbar a:active::before {
+  width: 200px;
+  height: 200px;
+}
+
+/* ==========================================
+   HAMBURGER MENU - HIDDEN ON DESKTOP
+   ========================================== */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 24px;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+.hamburger:active {
+  transform: scale(0.95);
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #7A2F2F;
+  border-radius: 3px;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transform-origin: center;
+  box-shadow: 0 1px 2px rgba(79, 64, 50, 0.2);
+}
+
+/* ==========================================
+   HAMBURGER ANIMATION - TRANSFORM TO X
+   ========================================== */
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+  background: #4F4032;
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+  background: #4F4032;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE - SLIDE-IN MENU
+   ========================================== */
+
+@media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0.7rem 2vw;
+    padding: 1rem 4vw;
   }
+
   .logo {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    margin-right: 0;
+    padding: 0.3rem 1rem;
   }
-  .navbar ul {
+
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide nav links by default, slide in from right */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 350px;
+    height: 100vh;
+    background: linear-gradient(180deg, #EFE3D6 0%, #F9F7F3 100%);
     flex-direction: column;
-    gap: 1rem;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+    padding: 5rem 0 2rem 0;
+    box-shadow: -4px 0 20px rgba(79, 64, 50, 0.2);
+    border-left: 2px solid #C5A253;
+    transition: right 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  /* Slide in when .show class is active */
+  .nav-links.show {
+    right: 0;
+  }
+
+  /* Overlay background when menu is open */
+  .nav-links.show::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 75%;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Style nav links for mobile */
+  .nav-links li {
+    width: 100%;
+    border-bottom: 1px solid rgba(197, 162, 83, 0.2);
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Staggered slide-in animation for each link */
+  .nav-links.show li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .nav-links.show li:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+
+  .nav-links.show li:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+
+  .nav-links.show li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+
+  .nav-links.show li:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+
+  .navbar a {
+    display: block;
+    width: 100%;
+    padding: 1.3rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 0;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .navbar a::after {
+    display: none;
+  }
+
+  .navbar a:hover,
+  .navbar a.active {
+    background: linear-gradient(90deg, rgba(197, 162, 83, 0.15), transparent);
+    color: #7A2F2F;
+    border-left-color: #C5A253;
+    padding-left: 2.5rem;
+    box-shadow: inset 4px 0 8px rgba(197, 162, 83, 0.1);
+    transform: translateY(0);
+  }
+
+  .navbar a:active {
+    background: rgba(197, 162, 83, 0.25);
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE (< 480px)
+   ========================================== */
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.8rem 3vw;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    padding: 0.25rem 0.8rem;
+  }
+
+  .hamburger {
+    width: 28px;
+    height: 22px;
+  }
+
+  .hamburger span {
+    height: 2.5px;
+  }
+
+  .nav-links {
+    width: 85%;
+    max-width: 300px;
+  }
+
+  .navbar a {
+    padding: 1.2rem 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .navbar a:hover,
+  .navbar a.active {
+    padding-left: 2rem;
+  }
+}
+
+/* ==========================================
+   TABLET LANDSCAPE (768px - 1024px)
+   ========================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar {
+    padding: 1rem 2.5vw;
+  }
+
+  .logo {
+    font-size: 1.9rem;
+    margin-right: 1.5rem;
+  }
+
+  .navbar ul {
+    gap: 1.5rem;
+  }
+
+  .navbar a {
+    font-size: 1rem;
+    padding: 0.4rem 0.9rem;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ========================================== */
+
+/* Focus states for keyboard navigation */
+.navbar a:focus,
+.hamburger:focus {
+  outline: 3px solid #C5A253;
+  outline-offset: 2px;
+}
+
+/* Better touch targets on mobile */
+@media (max-width: 768px) {
+  .navbar a,
+  .hamburger {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Prevent body scroll when mobile menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ==========================================
+   SMOOTH SCROLL OFFSET FOR FIXED NAVBAR
+   ========================================== */
+
+html {
+  scroll-padding-top: 80px;
+}
+
+/* ==========================================
+   LOADING ANIMATION (Optional)
+   ========================================== */
+
+.navbar {
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ==========================================
+   HOVER GLOW EFFECT ON LOGO
+   ========================================== */
+
+@media (min-width: 769px) {
+  .logo:hover {
+    filter: drop-shadow(0 0 8px rgba(197, 162, 83, 0.4));
+  }
+}
+
+/* ==========================================
+   ACTIVE LINK PULSE ANIMATION
+   ========================================== */
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 2px 8px rgba(79, 64, 50, 0.3);
+  }
+  50% {
+    box-shadow: 0 2px 16px rgba(197, 162, 83, 0.5);
+  }
+}
+
+.navbar a.active {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ==========================================
+   GRADIENT SHIFT ON NAVBAR SCROLL (Optional)
+   ========================================== */
+
+@media (min-width: 769px) {
+  .navbar.scrolled {
+    background: linear-gradient(90deg, #EFE3D6 75%, #C5A253 100%);
   }
 }
