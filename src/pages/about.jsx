@@ -26,7 +26,7 @@ const About = () => {
       <div className="artist-photo-sidebar">
         <div className="photo-frame-square">
           <img 
-            src="public/images/artist.png" 
+            src="images/artist.png" 
             alt="Kalaimamani Rtn. SV. RM. AVUDAYAPPAN" 
             className="artist-photo-square"
           />
